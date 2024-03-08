@@ -4,17 +4,18 @@ import {
   Dialog,
   DialogBody,
 } from "@material-tailwind/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaAnglesRight } from "react-icons/fa6";
 import Toastify from "toastify-js";
+import { FaVolumeMute, FaVolumeDown } from "react-icons/fa";
 
 function Next({ nextView, delay = "animate-delay-[1200ms]", label = "Okey" }) {
+  const [btnA] = useState(new Audio("./one-to-five/button.wav"));
   return (
     <div
-      className={`flex justify-end mt-5 items-center gap-2 cursor-pointer animate-fade-down ${delay}`}
-      onClick={() => nextView()}
+      className={`ml-auto mt-5 cursor-pointer animate-fade-down ${delay} w-fit`}
     >
-      {label} <FaAnglesRight />
+      <p className="flex items-center gap-2 border px-2 rounded bg-white text-black" onClick={() => {nextView();btnA.play()}}>{label} <FaAnglesRight /></p>
     </div>
   );
 }
@@ -134,6 +135,41 @@ function App() {
   const [vista, setVista] = useState(0);
   const [counter, setCounter] = useState(0);
   const [open, setOpen] = useState(false);
+  const [audio] = useState(new Audio("./one-to-five/base.mp3"));
+  const [final] = useState(new Audio("./one-to-five/final.mp3"));
+  const [alertA] = useState(new Audio("./one-to-five/alert.wav"));
+  const [alertF] = useState(new Audio("./one-to-five/alertF.wav"));
+  const [muted, setMuted] = useState(false);
+
+  const togglePlay = () => {
+    if (audio.paused) {
+      audio.loop = true;
+      audio.volume = 0.7
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  };
+
+  const toggleMute = () => {
+    audio.muted = !audio.muted;
+    setMuted(audio.muted);
+  };
+
+  useEffect(() => {
+    if (vista === 2) {
+      togglePlay();
+    }
+
+    if(open===true){
+      audio.pause()
+      final.play();
+    }
+
+    if(open===false){
+      final.pause();
+    }
+  });
 
   const handleOpen = () => setOpen(!open);
 
@@ -160,6 +196,8 @@ function App() {
       "Uinguardium lebiosa",
     ];
     let toastyText = labels[Math.floor(Math.random() * 5)];
+    let audioToPlay = true
+
     if (variant == "siempre5") {
       toastyText = "Lo que escojas esta vale 500 :)";
       value = 500;
@@ -177,6 +215,7 @@ function App() {
 
     if (variant == "lectura" && label != "Lo sabia 🫡") {
       showToasty(label, "bg-red-500");
+      alertF.play()
       return;
     }
 
@@ -196,8 +235,15 @@ function App() {
     if (variant == "dormir" && value > 5) {
       toastyText = `BUUUUU 👎 -${value}pts`;
       value = -value;
+      audioToPlay=false
     } else if (variant == "dormir" && value == 5) {
       toastyText = "Que emocion !!!!!";
+    }
+
+    if (audioToPlay) {
+      alertA.play()
+    }else{
+      alertF.play()
     }
 
     showToasty(
@@ -214,13 +260,13 @@ function App() {
     <>
       {vista > 1 && (
         <div className="bg-gray-900 text-5xl fixed top-10 lg:left-[40%] lg:w-96 w-fit left-14 flex gap-2 rounded-xl px-5 py-2 justify-center animate-shake animate-infinite animate-alternate-reverse animate-duration-[5000ms]">
-          <p className="text-blue-400 animate-jump-in animate-delay-1000">
+          <p className="text-blue-400 animate-jump-in animate-delay-300">
             ONE
           </p>
-          <p className="text-white animate-jump-in animate-delay-[1500ms]">
+          <p className="text-white animate-jump-in animate-delay-500">
             to
           </p>
-          <p className="text-purple-500 animate-jump-in animate-delay-[2000ms]">
+          <p className="text-purple-500 animate-jump-in animate-delay-700">
             FiVe
           </p>
         </div>
@@ -229,24 +275,24 @@ function App() {
         <div className="bg-blue-500 tarjeta">
           Hola!!
           <br />
-          Soy yo el humilde chico de ingenieria haciendo uso de las habilidades
-          que pude adquirir durante mi estudio, para hacer este simple detalle.
+          Soy yo de nuevo, el chico de ingenieria haciendo uso de las habilidades
+          que adquiri durante mi estudio, para hacer este detalle.
           <Next nextView={nextView} />
         </div>
       )}
       {vista === 1 && (
-        <div className="bg-amber-500 tarjeta">
-          Estoy muy feliz sabes, hoy hace 1 mes desde que estamos juntos y
+        <div className="bg-amber-700 tarjeta">
+          Estoy muy feliz sabes, hace 1 mes desde que estamos juntos y
           creeme que ha sido tan genial pasarlo contigo.
           <br />
           <br />
-          Es por ello me he tomado el tiempo para crear el siguiente minijuego,
-          🥁🥁🥁🥁🥁 se llama!!!!!
+          Es por ello me he tomado el tiempo para crear el siguiente minijuego, se llama!!!!!
+          🥁🥁🥁🥁🥁 
           <Next nextView={nextView} label="Como se llama?" />
         </div>
       )}
       {vista === 2 && (
-        <div className="bg-lime-700 tarjeta">
+        <div className="bg-light-green-600 tarjeta">
           Instrucciones
           <br />
           A continuacion apareceran distintas preguntas, de las cuales tendras
@@ -419,7 +465,17 @@ function App() {
           </div>
         </div>
       )}
-
+      {vista >= 2 && (
+        <div className="fixed bottom-5 right-5">
+          <Button onClick={toggleMute} className="p-3 bg-white text-black">
+            {muted ? (
+              <FaVolumeDown className="h-6 w-6" />
+            ) : (
+              <FaVolumeMute className="h-6 w-6" />
+            )}
+          </Button>
+        </div>
+      )}
       <Dialog open={open} handler={handleOpen} className="bg-black">
         <DialogBody>
           <div className="relative h-[58vh] lg:h-[60vh] flex items-center justify-center">
