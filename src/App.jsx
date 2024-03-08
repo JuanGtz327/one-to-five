@@ -10,7 +10,7 @@ import Toastify from "toastify-js";
 import { FaVolumeMute, FaVolumeDown } from "react-icons/fa";
 
 function Next({ nextView, delay = "animate-delay-[1200ms]", label = "Okey" }) {
-  const [btnA] = useState(new Audio("./one-to-five/button.wav"));
+  const [btnA] = useState(new Audio("./button.wav"));
   return (
     <div
       className={`ml-auto mt-5 cursor-pointer animate-fade-down ${delay} w-fit`}
@@ -135,10 +135,10 @@ function App() {
   const [vista, setVista] = useState(0);
   const [counter, setCounter] = useState(0);
   const [open, setOpen] = useState(false);
-  const [audio] = useState(new Audio("./one-to-five/base.mp3"));
-  const [final] = useState(new Audio("./one-to-five/final.mp3"));
-  const [alertA] = useState(new Audio("./one-to-five/alert.wav"));
-  const [alertF] = useState(new Audio("./one-to-five/alertF.wav"));
+  const [audio] = useState(new Audio("./base.mp3"));
+  const [final] = useState(new Audio("./final.mp3"));
+  const [alertA] = useState(new Audio("./alert.wav"));
+  const [alertF] = useState(new Audio("./alertF.wav"));
   const [muted, setMuted] = useState(false);
 
   const togglePlay = () => {
