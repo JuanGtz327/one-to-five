@@ -1,0 +1,209 @@
+[
+  {
+    "level_id": 1,
+    "questions": [
+      {
+        "id": 1,
+        "question": "Tener un maraton de peliculas tan bizarras e incoherentes que nos dejen un licuado mental 🫨 pero con opcion de debate"
+      },
+      {
+        "id": 2,
+        "question": "Visitar un sin fin de museos (Como el castillo) y tomar fotitos para mostrar que tan fascinados estamos por el arte 🤳"
+      },
+      {
+        "id": 3,
+        "question": "Picnic con bebidas que alteran los 5 sentidos 👹"
+      },
+      {
+        "id": 4,
+        "question": "Tener abrazitos (Sin blutut) 😌 con el creador de este jueguito",
+        "absolute_toasty_text": "Lo que escojas esta vale 500 :)",
+        "absolute_value": 500
+      },
+      {
+        "id": 5,
+        "question": "Crear una carrera de tortugas donde apostaremos todas nuestras finanzas, para despues cometer fraude fiscal 🤑"
+      },
+      {
+        "id": 6,
+        "question": "Visitar Tlaxcala o Toluca o cualquier lugar que empieze con T (Tu corazon) 🤠",
+        "absolute_toasty_text": "Pueblo magico +1000pts",
+        "addValue": 1000,
+        "answers": [
+          {
+            "value": 1001,
+            "label": "QUE"
+          },
+          {
+            "value": 1002,
+            "label": "Ro"
+          },
+          {
+            "value": 1003,
+            "label": "man"
+          },
+          {
+            "value": 1004,
+            "label": "ti"
+          },
+          {
+            "value": 1005,
+            "label": "co"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "question": "XD",
+        "absolute_toasty_text": "XD",
+        "answers": [
+          {
+            "value": 250,
+            "label": "XD"
+          },
+          {
+            "value": 1000,
+            "label": "XD"
+          },
+          {
+            "value": 35,
+            "label": "XD"
+          },
+          {
+            "value": 1,
+            "label": "XD"
+          },
+          {
+            "value": -20000,
+            "label": "XD"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Poner al creador de este juego a leer un libro de unas 500 paginas 👀",
+        "answers": [
+          {
+            "value": 1,
+            "toasty_text": "Lo sabia 🫡"
+          },
+          {
+            "value": 2,
+            "toasty_text": "Estas cerca!!!!!",
+            "invalid": true,
+            "failure": true
+          },
+          {
+            "value": 3,
+            "toasty_text": "Puedes hacerlo mejor 🤨",
+            "invalid": true,
+            "failure": true
+          },
+          {
+            "value": 4,
+            "toasty_text": "Esta menos 🤠",
+            "invalid": true,
+            "failure": true
+          },
+          {
+            "value": 5,
+            "toasty_text": "Esta no 🤭",
+            "invalid": true,
+            "failure": true
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Revolucionar el arte de comunicarse a traves de 101 reel diarios, asi como emojis y stickers 💯"
+      },
+      {
+        "id": 10,
+        "question": "Escuchar una playlist de 8hrs de duracion, claro que si 🎵",
+        "answers": [
+          {
+            "value": 100,
+            "toasty_text": "🎵🎺🎸🎹 +100pts"
+          },
+          {
+            "value": 200,
+            "toasty_text": "🎵🎺🎸🎹 +200pts"
+          },
+          {
+            "value": 300,
+            "toasty_text": "🎵🎺🎸🎹 +300pts"
+          },
+          {
+            "value": 400,
+            "toasty_text": "🎵🎺🎸🎹 +400pts"
+          },
+          {
+            "value": 500,
+            "toasty_text": "🎵🎺🎸🎹 +500pts"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "question": "✅✅✅ Desvelarse por 1 SEMANA ✅✅✅",
+        "answers": [
+          {
+            "value": -100,
+            "toasty_text": "BUUUUU 👎 -100pts",
+            "failure": true
+          },
+          {
+            "value": -200,
+            "toasty_text": "NOOOOO 👎 -200pts",
+            "failure": true
+          },
+          {
+            "value": -300,
+            "toasty_text": "DECEPCION 👎 -300pts",
+            "failure": true
+          },
+          {
+            "value": -400,
+            "toasty_text": "MAL 👎 -400pts",
+            "failure": true
+          },
+          {
+            "value": 5,
+            "toasty_text": "Que emocion!!!!"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Preparar gelatina verde y asi ayudar a Carlitos y a Tommy a dormir 👨‍🍳"
+      },
+      {
+        "id": 13,
+        "question": "¿Besito?",
+        "absolute_toasty_text": "👁️👄👁️",
+        "answers": [
+          {
+            "value": 10000,
+            "label": "😚"
+          },
+          {
+            "value": 20000,
+            "label": "😚"
+          },
+          {
+            "value": 30000,
+            "label": "😚"
+          },
+          {
+            "value": 40000,
+            "label": "😚"
+          },
+          {
+            "value": 50000,
+            "label": "😚"
+          }
+        ]
+      }
+    ]
+  }
+]

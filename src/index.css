@@ -48,5 +48,5 @@
 }
 
 .tarjeta {
-  @apply text-white p-4 mt-40 lg:mt-[10%] w-96 mx-auto rounded-lg animate-jump-in;
+  @apply text-white p-4 w-96 mx-auto rounded-lg;
 }
